@@ -14,6 +14,11 @@
 		D68956661FFC713100601423 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68956641FFC713100601423 /* LaunchScreen.storyboard */; };
 		D68956711FFC713100601423 /* BuglyTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68956701FFC713100601423 /* BuglyTestTests.swift */; };
 		D689567C1FFC713100601423 /* BuglyTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689567B1FFC713100601423 /* BuglyTestUITests.swift */; };
+		D689568F1FFC887C00601423 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D689568E1FFC887C00601423 /* SystemConfiguration.framework */; };
+		D68956911FFC888D00601423 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68956901FFC888D00601423 /* Security.framework */; };
+		D68956931FFC889800601423 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D68956921FFC889700601423 /* libz.tbd */; };
+		D68956951FFC88A300601423 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D68956941FFC88A300601423 /* libc++.tbd */; };
+		D68956971FFCA08600601423 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68956961FFCA08500601423 /* Bugly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		D689567B1FFC713100601423 /* BuglyTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuglyTestUITests.swift; sourceTree = "<group>"; };
 		D689567D1FFC713100601423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D68956891FFC714200601423 /* BuglyTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuglyTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		D689568E1FFC887C00601423 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D68956901FFC888D00601423 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D68956921FFC889700601423 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D68956941FFC88A300601423 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D68956961FFCA08500601423 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = BuglyTest/Bugly.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68956971FFCA08600601423 /* Bugly.framework in Frameworks */,
+				D68956951FFC88A300601423 /* libc++.tbd in Frameworks */,
+				D68956931FFC889800601423 /* libz.tbd in Frameworks */,
+				D68956911FFC888D00601423 /* Security.framework in Frameworks */,
+				D689568F1FFC887C00601423 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +97,7 @@
 				D689566F1FFC713100601423 /* BuglyTestTests */,
 				D689567A1FFC713100601423 /* BuglyTestUITests */,
 				D68956591FFC713100601423 /* Products */,
+				D689568D1FFC887C00601423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +141,18 @@
 				D689567D1FFC713100601423 /* Info.plist */,
 			);
 			path = BuglyTestUITests;
+			sourceTree = "<group>";
+		};
+		D689568D1FFC887C00601423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D68956961FFCA08500601423 /* Bugly.framework */,
+				D68956941FFC88A300601423 /* libc++.tbd */,
+				D68956921FFC889700601423 /* libz.tbd */,
+				D68956901FFC888D00601423 /* Security.framework */,
+				D689568E1FFC887C00601423 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +460,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM2EX5ALF4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuglyTest",
+				);
 				INFOPLIST_FILE = BuglyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaohongya.BuglyTest;
@@ -450,6 +482,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GM2EX5ALF4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuglyTest",
+				);
 				INFOPLIST_FILE = BuglyTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhaohongya.BuglyTest;

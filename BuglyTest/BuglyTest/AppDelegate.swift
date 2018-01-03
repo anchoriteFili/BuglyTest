@@ -12,11 +12,26 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let TENCENT_BUGLY_APPID = "900001055"
+    let  CHANNEL_CODE = "iOS"
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setupBugly()
         return true
+    }
+    
+    public func setupBugly() {
+        
+        let bugConfig = BuglyConfig()
+        bugConfig.channel = CHANNEL_CODE
+        bugConfig.version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        Bugly.start(withAppId: TENCENT_BUGLY_APPID, config: bugConfig)
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

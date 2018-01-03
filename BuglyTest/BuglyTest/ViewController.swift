@@ -19,6 +19,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func click(_ sender: Any) {
+        
+        let array = [1]
+        print(array[1])
+        
+        
+    }
+    
 
 
 }

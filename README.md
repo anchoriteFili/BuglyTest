@@ -1,2 +1,68 @@
-# BuglyTest
-腾讯Bugly测试
+
+### 相关引用
+---
+
+* <a href="https://bugly.qq.com/v2/index" target="_blank">Bugly首页</a><br>
+* <a href="https://bugly.qq.com/v2/sdkDownload" target="_blank">SDK下载</a><br>
+* <a href="https://bugly.qq.com/docs/user-guide/instruction-manual-ios/?v=20170912151050" target="_blank">Bugly iOS SDK 使用指南</a><br>
+
+
+### 导入过程
+---
+
+#### 1. 使用pod导入
+
+`pod 'Bugly'`
+
+#### 2. 手动接入
+* 下载<a href="https://bugly.qq.com/docs/release-notes/release-ios-bugly/" target="_blank">Bugly iOS SDK</a>
+* 拖拽`Bugly.framework`文件到Xcode工程内(请勾选`Copy items if needed`选项)
+* 添加依赖库
+  * `SystemConfiguration.framework`
+  * `Security.framework`
+  * `libz.dylib` 或 `libz.tbd`
+  * `libc++.dylib` 或 `libc++.tbd`
+
+#### 3. 初始化SDK
+
+在工程的 `AppDelegate.m` 文件导入头文件
+> `#import <Bugly/Bugly.h>`
+> 如果是Swift工程，请在对应`bridging-header.h`中导入
+
+初始化Bugly
+
+* Object-C
+
+```objc
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Bugly startWithAppId:@"此处替换为你的AppId"];
+    return YES;
+}
+```
+
+* Swift
+
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    Bugly.startWithAppId("此处替换为你的AppId")
+    return true
+}
+```
+
+* 正常的使用
+
+```swift
+let TENCENT_BUGLY_APPID = "900001055"
+let  CHANNEL_CODE = "iOS"
+
+
+public func setupBugly() {
+        
+        let bugConfig = BuglyConfig()
+        bugConfig.channel = CHANNEL_CODE
+        bugConfig.version = "1.0"
+        Bugly.start(withAppId: TENCENT_BUGLY_APPID, config: bugConfig)
+    
+    }
+
+```
